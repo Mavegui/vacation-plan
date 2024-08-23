@@ -46,18 +46,18 @@ To get started with this project, follow these steps:
    ```bash
    php artisan migrate
 
-6. **Configurar e usar o XAMPP**
-   Inicie o XAMPP: Abra o XAMPP Control Panel e inicie o Apache e o MySQL.
+6. **Set up and use XAMPP**
+   Start XAMPP: Open the XAMPP Control Panel and launch Apache and MySQL. 
 
-   **Configuração do XAMPP:**
-   Mova o diretório do seu projeto para o diretório htdocs do XAMPP. Normalmente, ele está localizado em C:\xampp\htdocs no Windows ou /opt/lampp/htdocs no Linux.
-   No navegador, acesse http://localhost/vacation-plan/public para visualizar o projeto.
+   **Configuration XAMPP:**
+   Move your project's directory to the XAMPP htdocs directory. It is typically located at C:\xampp\htdocs on Windows or /opt/lampp/htdocs on Linux.
+   In your browser, go to http://localhost/vacation-plan/public to view your project .
 
 
-**Outras Informações**
+**Other Information**
 
-- Ferramentas usadas: Laravel 11, domPDF para geração de PDFs.
-- Outros recursos: Testes de e-mail usando Mailtrap.io.
-- Observação: Todo o código está comentado para facilitar o entendimento de quem baixar o projeto.
+- Tools used: Laravel 11, domPDF for PDF generation. 
+- Other features: Email testing using Mailtrap.io. 
+- Note: All the code is commented to make it easier for those who download the project to understand. 
 
 
