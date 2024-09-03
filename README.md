@@ -33,24 +33,24 @@ To get started with this project, follow these steps:
 
    ```bash
    cd vacation-plan
-
-   ```bash
    composer install
-4. **Set up the environment**
-   Edit the .env file and configure the environment variables, including the database credentials and the email provider settings for password reset.
+3. **Set up the environment**
+
+    Edit the .env file and configure the environment variables, including the database credentials and the email provider settings for password reset.
 
    ```bash
    cp .env.example .env
-5. **Generate the application key**
+4. **Generate the application key**
 
    ```bash
    php artisan key:generate
-6. **Run the migrations to create the tables in the database**
+5. **Run the migrations to create the tables in the database**
 
    ```bash
    php artisan migrate
 
-7. **Serve the Application**
+6. **Serve the Application**
+
    Use Laravel's built-in server to serve the application:
    
    ```bash
