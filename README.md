@@ -29,24 +29,26 @@ To get started with this project, follow these steps:
    ```bash
    git clone https://github.com/mavegui/vacation-plan.git
 2. **Install the project dependencies**
+   Navigate to the project directory:
 
    ```bash
+   cd vacation-plan
    composer install
-3. **Set up the environment**
+4. **Set up the environment**
    Edit the .env file and configure the environment variables, including the database credentials and the email provider settings for password reset.
 
    ```bash
    cp .env.example .env
-4. **Generate the application key**
+5. **Generate the application key**
 
    ```bash
    php artisan key:generate
-5. **Run the migrations to create the tables in the database**
+6. **Run the migrations to create the tables in the database**
 
    ```bash
    php artisan migrate
 
-6. **Set up and use XAMPP**
+7. **Set up and use XAMPP**
    Start XAMPP: Open the XAMPP Control Panel and launch Apache and MySQL. 
 
    **Configuration XAMPP:**
