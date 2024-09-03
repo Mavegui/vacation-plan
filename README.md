@@ -48,13 +48,11 @@ To get started with this project, follow these steps:
    ```bash
    php artisan migrate
 
-7. **Set up and use XAMPP**
-   Start XAMPP: Open the XAMPP Control Panel and launch Apache and MySQL. 
-
-   **Configuration XAMPP:**
-   Move your project's directory to the XAMPP htdocs directory. It is typically located at C:\xampp\htdocs on Windows or /opt/lampp/htdocs on Linux.
-   In your browser, go to http://localhost/vacation-plan/public to view your project .
-
+7. **Serve the Application**
+   Use Laravel's built-in server to serve the application:
+   
+     ```bash
+   php artisan serve
 
 **Other Information**
 
