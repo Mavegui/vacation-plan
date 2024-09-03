@@ -53,7 +53,6 @@ To get started with this project, follow these steps:
    
      ```bash
    php artisan serve
-
 **Other Information**
 
 - Tools used: Laravel 11, domPDF for PDF generation. 
