@@ -18,7 +18,7 @@ This project is a challenge proposed by [Buzzvel](https://buzzvel.com/) for a de
 - **Laravel**: 11
 - **MySQL**: or other database supported by Laravel
 - **Mailtrap.io**: For testing email sending or another of your choice
-- **XAMPP**: For local server environment
+- **PHP Artisan Serve**: For local server environment (replaces XAMPP)
   
 ## Installation
 
@@ -33,6 +33,8 @@ To get started with this project, follow these steps:
 
    ```bash
    cd vacation-plan
+
+   ```bash
    composer install
 4. **Set up the environment**
    Edit the .env file and configure the environment variables, including the database credentials and the email provider settings for password reset.
@@ -51,7 +53,7 @@ To get started with this project, follow these steps:
 7. **Serve the Application**
    Use Laravel's built-in server to serve the application:
    
-     ```bash
+   ```bash
    php artisan serve
 **Other Information**
 
