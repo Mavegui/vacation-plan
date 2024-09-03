@@ -36,8 +36,8 @@ To get started with this project, follow these steps:
    composer install
 3. **Set up the environment**
 
-    Edit the .env file and configure the environment variables, including the database credentials and the email provider settings for password reset.
-
+   Copy the example environment file and configure your environment variables, including database credentials and email provider settings:
+   
    ```bash
    cp .env.example .env
 4. **Generate the application key**
