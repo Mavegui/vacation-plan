@@ -15,7 +15,6 @@ class SiteController extends Controller
      * @return \Illuminate\View\View
      */
     public function index() {
-        // Return the view for the site home page
         return view('site.home');
     }
 
