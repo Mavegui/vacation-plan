@@ -60,7 +60,7 @@ class DashboardController extends Controller
         $user->lastName = $request->input('lastName');
         $user->email = $request->input('email');
     
-        $user->save(); // Save the changes to the database
+        $user->save();
     
         return redirect()->route('admin.dashboard')->with('success', 'User data updated successfully!');
     }
@@ -93,11 +93,9 @@ class DashboardController extends Controller
             'description' => 'required|string',
             'locale' => 'required|string|max:255',
         ]);
-        // Validation for Brazilian locale might be added here if needed
-        
-        // Add user_id to the validated data array
-        $validatedData['user_id'] = Auth::id();
 
+
+        $validatedData['user_id'] = Auth::id();
         VacationPlan::create($validatedData);
 
         return redirect()->route('admin.dashboard')->with('success', 'Vacation plan created successfully!');
@@ -115,7 +113,7 @@ class DashboardController extends Controller
     public function updatePlanVacation($id) {
         $plan = VacationPlan::where('id', $id)
             ->where('user_id', Auth::id())
-            ->firstOrFail(); // Ensure that the user can only view their own plans
+            ->firstOrFail();
 
         return view('admin.update', compact('plan'));
     }
@@ -134,8 +132,8 @@ class DashboardController extends Controller
     public function update(Request $request, $id) {
         $plan = VacationPlan::where('id', $id)
             ->where('user_id', Auth::id())
-            ->firstOrFail(); // Ensure that the user can only update their own plans
-
+            ->firstOrFail(); 
+        
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'date' => 'required|date',
