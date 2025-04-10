@@ -21,19 +21,14 @@ class CheckToken
      */
     public function handle(Request $request, Closure $next): Response
     {    
-        // Check if the session has a token
+        
         if (!session()->has('token')) {
-            // Redirect to home page if no token is present
             return redirect()->route('site.home');
         }
 
-        // Get the token from the session
         $token = session('token');
-
-        // Set the token in the Authorization header of the request
         $request->headers->set('Authorization', 'Bearer ' . $token);
 
-        // Pass the request to the next middleware or controller
         return $next($request);
     }
 }
