@@ -14,7 +14,6 @@ class LoginController extends Controller
      */
     public function index()
     {
-        // Returns the view 'login.form' which contains the login form.
         return view('login.form');
     }
 
@@ -32,30 +31,21 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the incoming request data for login.
-        // Custom validation messages are provided in Portuguese.
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:5'
         ]);
-        // Extract credentials from the request.
+
         $credentials = $request->only('email', 'password');
-        
-        // Attempt to authenticate the user with the provided credentials.
         $authenticated = Auth::attempt($credentials);
 
         if (!$authenticated) {
-            // Redirect back to the login form with an error message if authentication fails.
             return redirect()->route('login.index')->withErrors(['error' => 'Invalid email or password, please try again.']);
         } 
         
-        // Retrieve the authenticated user.
         $user = Auth::user();
-        
-        // Create a new authentication token for the user.
         $token = $user->createToken('API Token')->plainTextToken;
-        
-        // Store the token in the session and redirect the user to the administration panel with a success message.
         session(['token' => $token]);
         return redirect()->route('admin.dashboard')->with('success', 'Logged in');
     }
@@ -73,13 +63,10 @@ class LoginController extends Controller
      */
     public function destroy(Request $request)
     {
-        // Check if the user is authenticated and has a valid token.
         if ($request->user()) {
-            // Revoke all tokens for the authenticated user.
             $request->user()->tokens()->delete();
         }
 
-        // Remove the token from the session and redirect the user to the home page.
         session()->forget('token');
         return redirect()->route('site.home');
     }
