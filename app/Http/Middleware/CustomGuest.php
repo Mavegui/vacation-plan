@@ -16,7 +16,7 @@ class CustomGuest
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::guard('sanctum')->check()) { // Use o guard apropriado
+        if (Auth::guard('sanctum')->check()) { 
             return redirect()->route('admin.dashboard');
         }
 
