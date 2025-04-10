@@ -15,7 +15,6 @@ class ForgotPasswordController extends Controller
      */
     public function emailForm()
     {
-        // Returns the view 'login.password.emailForm' which contains the form to request a password reset link.
         return view('login.password.emailForm');
     }
 
@@ -27,21 +26,16 @@ class ForgotPasswordController extends Controller
      */
     public function emailLink(Request $request)
     {
-        // Validate that the 'email' field is required and must be a valid email address.
+        
         $request->validate(['email' => 'required|email']);
-
-        // Attempt to send a password reset link to the given email address.
         $status = Password::sendResetLink(
             $request->only('email')
         );
 
-        // Check if the reset link was sent successfully.
         if ($status == Password::RESET_LINK_SENT) {
-            // Redirect back with a success message if the link was sent.
             return redirect()->back()->with('status', __('Password reset link sent! Check your email.'));
         }
 
-        // Redirect back with an error message if the link could not be sent.
         return redirect()->back()->withErrors(['email' => __($status)]);
     }
 }
